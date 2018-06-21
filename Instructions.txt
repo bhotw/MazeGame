@@ -1,0 +1,19 @@
+If you haven't completed the exercises from Week 9, do #1 first. Otherwise, copy your code into main.py and start adding new features!  
+
+1. 
+You are going to create a maze game modeled on Python Explorer! For all parts of this question you will use the provided maze module. There are three different mazes we will be playing with: maze1.txt, maze2.txt, and maze3.txt.
+    (a) The maze module has two functions: start_maze(file_name), which starts the game with the provided maze file and look_around(), which shows where you are standing and the immediate spaces surrounding you in the maze. 'O' is your current position, 'X' are walls you cannot pass, ' ' is open space, 'D' is the door you are trying to escape through, and 'K' is a key you need to obtain to unlock the door. Starting with the maze1.txt file, write code that starts the maze and then continuously asks the user for a command. For this first step, the only command the game will understand is "look around".
+    (b) The maze module has the function move(direction) that will move if direction is 'left' or 'right'. Add to your code from (a) the commands 'left' and 'right', 'up'. Your code should call look_around() every time you move.
+    (c) You'll notice the move function allows you to walk through walls! This shouldn't happen! The look_in_direction(direction) function in the maze module will return what is in the provided direction - ' ', 'X', 'K', or 'D'. Use this to write a function check_valid_move(direction) that returns True if you can move in the given direction and False otherwise. Then modify your code from (b) to check if a move is valid before allowing the move to happen. You may want to print a message like "There's a wall there!" if the player cannot move.
+    (d) Create a dictionary maze_character_to_description that maps each maps the unique maze characters to a description of what they represent. For example,
+       maze_character_to_description['X'] = 'a wall'
+       maze_character_to_description['K'] = 'a key'
+       maze_character_to_description[' '] = 'open space'
+       maze_character_to_description['D'] = 'a door'
+Then implement a command 'look' that prints what you see on the space you're standing. You can check the space you are standing on using the maze function get_current_space(). 
+    (e) The maze function get_inventory() will return a list of items you have picked up on your journey. Write a function add_to_inventory(item) that adds item to your inventory. Then add a command "pick up" that will add any item found on the space you are standing to your inventory. Currently, the only item that should be allowed to be picked up is the key ('K'). If you successfully pick up an item, call the maze function remove_item_from_space(). Add appropriate print statements to tell the user what happened.
+    (f) Add a command "inventory" that prints out all items you have picked up.
+    (g) You win the game if you can get to the door ('D') with the key ('K') in your inventory. Add to your code a command 'open' that unlocks the door you are standing on if you have the key. If successful, your code should print "You've escaped!" and no longer prompt the user for a command.
+    (h) Play the game with maze2.txt and maze3.txt! You will have to add the commands "up" and "down" to your code.
+
+
