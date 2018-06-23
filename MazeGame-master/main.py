@@ -114,7 +114,12 @@ def bribe():
 
 
 
+    
+
+
+
 while True :
+    print("Welcome to the Maze Game in this game you will looka round rooms and ")
 	user_input = input("what is the next command master: ")
 	if user_input == "look around":
 		maze.look_around()
